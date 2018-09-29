@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invoice.ui.invoice.main.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="HandOver">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox fx:id="handOver1" layoutX="14.0" layoutY="14.0" prefHeight="150.0" prefWidth="474.0" style="-fx-background-color: #DDDDDD;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <JFXTextField fx:id="invoiceId" labelFloat="true" onAction="#handoverSearch" prefWidth="200.0" promptText="invoice ID">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <GridPane prefHeight="150.0" prefWidth="384.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label text="Invoice Description" />
+                                    <Label text="Customer ID" GridPane.rowIndex="1" />
+                                    <Label text="Tax Amount" GridPane.rowIndex="2" />
+                                    <Label text="Total Amount" GridPane.rowIndex="3" />
+                                    <Label text="Due date" GridPane.rowIndex="4" />
+                                    <Label fx:id="inde" text="Label" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="cid" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="tam" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="ta" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="dd" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="handOver2" layoutX="10.0" layoutY="177.0" prefHeight="106.0" prefWidth="480.0" style="-fx-background-color: #DDDDDD;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="177.0">
+                           <children>
+                              <JFXTextField fx:id="sperson" labelFloat="true" prefHeight="30.0" prefWidth="200.0" promptText="Sales Person">
+                                 <HBox.margin>
+                                    <Insets left="30.0" right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="nic" labelFloat="true" prefHeight="30.0" prefWidth="200.0" promptText="NIC">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <Button layoutX="259.0" layoutY="407.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="133.0" text="HandOver" AnchorPane.bottomAnchor="20.0" />
+                        <VBox layoutX="60.0" layoutY="296.0" prefHeight="150.0" prefWidth="234.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Due Invoice">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView layoutX="103.0" layoutY="58.0" prefHeight="268.0" prefWidth="495.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="60.0" />
+                        <JFXDatePicker layoutX="250.0" layoutY="342.0" prefWidth="210.0" promptText="Extended Duedate" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="250.0" />
+                        <JFXTextField fx:id="dueid" labelFloat="true" layoutX="250.0" layoutY="14.0" onAction="#DueInvoiceSearch" prefWidth="200.0" promptText="Invoice id" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="20.0" />
+                        <Button layoutX="305.0" layoutY="407.0" mnemonicParsing="false" prefWidth="100.0" text="due extend" AnchorPane.bottomAnchor="10.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Payed">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox fx:id="pay01" layoutX="10.0" layoutY="14.0" prefHeight="150.0" prefWidth="474.0" style="-fx-background-color: #DDDDDD;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <JFXTextField fx:id="payInvoiceId" labelFloat="true" onAction="#payableinvoiceSearch" prefWidth="200.0" promptText="Invoice ID">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <GridPane prefHeight="150.0" prefWidth="384.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Invoice Description" />
+                                    <Label text="Customer ID" GridPane.rowIndex="1" />
+                                    <Label text="Tax Amount" GridPane.rowIndex="2" />
+                                    <Label text="Total Amount" GridPane.rowIndex="3" />
+                                    <Label text="Due date" GridPane.rowIndex="4" />
+                                    <Label fx:id="inde1" text="Label" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="cid1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="tam1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="ta1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="dd1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="pay02" layoutX="14.0" layoutY="173.0" prefHeight="106.0" prefWidth="480.0" style="-fx-background-color: #DDDDDD;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <children>
+                              <JFXTextField fx:id="pamount" labelFloat="true" onAction="#amountCalculate" prefHeight="30.0" prefWidth="200.0" promptText="payable amount">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="20.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <GridPane prefHeight="0.0" prefWidth="384.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <Label text="amount" />
+                                    <Label text="remaining Payment" GridPane.rowIndex="1" />
+                                    <Label text="next Duedate" GridPane.rowIndex="2" />
+                                    <Label fx:id="amo" text="Label" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="rp" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="nd" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </HBox>
+                        <Button layoutX="291.0" layoutY="327.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="133.0" text="pay" AnchorPane.bottomAnchor="20.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#loadAddInvoice" prefHeight="221.0" prefWidth="100.0" text="Add Invoice">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadListInvoice" prefHeight="257.0" prefWidth="100.0" text="View Invoice" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

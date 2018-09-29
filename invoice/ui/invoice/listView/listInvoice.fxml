@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="750.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="invoice.ui.invoice.listView.ListInvoiceController">
+    <stylesheets>
+        <URL value="@listinvoice.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="invoiceView" prefHeight="530.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columns>
+            <TableColumn fx:id="inCol" prefWidth="75.0" text="Invoice ID" />
+            <TableColumn fx:id="desCol" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="cliCol" prefWidth="75.0" text="Client ID" />
+            <TableColumn fx:id="dueCol" prefWidth="75.0" text="Due Date" />
+            <TableColumn fx:id="preparedtimeCol" prefWidth="75.0" text="Prepared Time" />
+            <TableColumn fx:id="totCol" prefWidth="75.0" text="Total" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Remove invoice" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+   </children>
+</AnchorPane>

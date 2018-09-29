@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="530.0" prefWidth="750.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invoice.ui.invoice.view.InvoiceViewController">
+    <stylesheets>
+        <URL value="@invoiceview.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.6898395721925134" layoutX="244.0" layoutY="113.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="500.0">
+               <children>
+                  <TableView fx:id="itemView" layoutX="14.0" layoutY="103.0" prefHeight="218.0" prefWidth="493.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0">
+                    <columns>
+                      <TableColumn fx:id="itemIdCol" prefWidth="46.0" text="Item Id" />
+                      <TableColumn fx:id="descriCol" prefWidth="237.0" text="Description" />
+                        <TableColumn fx:id="quanCol" prefWidth="57.0" text="Quantity" />
+                        <TableColumn fx:id="unitCol" prefWidth="65.0" text="Unit Price" />
+                        <TableColumn fx:id="lineCol" prefWidth="87.0" text="Line Total" />
+                    </columns>
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#editItem" text="Edit" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+                  <HBox layoutY="469.0" prefHeight="50.0" prefWidth="513.0" AnchorPane.bottomAnchor="0.0">
+                     <children>
+                        <JFXButton onAction="#cancel" prefHeight="50.0" prefWidth="260.0" text="Cancel" />
+                        <JFXButton onAction="#addInvoice" prefHeight="50.0" prefWidth="260.0" text="Save" />
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="145.0" prefWidth="257.0">
+                     <children>
+                        <Label fx:id="cID" text="Cilent ID">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="cName" text="Cilent Name">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="cCompany" text="Cilent Company">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="cAddress" text="Cilent Address">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="cEmail" text="Cilent Email">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="257.0" layoutY="-1.0" prefHeight="138.0" prefWidth="257.0">
+                     <children>
+                        <Label fx:id="iID" text="Invoice ID">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="iDes" text="Description">
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <GridPane layoutX="304.0" layoutY="376.0" prefHeight="95.0" prefWidth="199.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="74.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="36.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="91.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Sub Total" />
+                        <Label text="Tax Amount" GridPane.rowIndex="1" />
+                        <Label text="Total" GridPane.rowIndex="2" />
+                        <Label fx:id="subTotal" text="Label" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="taxAmount" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="total" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="taxPacentage" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="30.0" prefHeight="498.0" prefWidth="229.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox fx:id="invoiceBox" prefHeight="240.0" prefWidth="229.0" style="-fx-background-color: #CDCDCD;">
+                           <children>
+                              <JFXTextField fx:id="inId" labelFloat="true" onAction="#pri" promptText="Invoice ID" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="15.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="inDesc" labelFloat="true" promptText="Invoice Description" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXDatePicker fx:id="dueDate" defaultColor="#4059a9" prefHeight="25.0" prefWidth="216.0" promptText="Due Date">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXDatePicker>
+                              <JFXTextField fx:id="ciID" labelFloat="true" onAction="#addCustomer" promptText="Cilent ID" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="taPa" labelFloat="true" onAction="#amountCalculate" promptText="Tax Pacentage" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox fx:id="itemBox" prefHeight="250.0" prefWidth="229.0" style="-fx-background-color: #DCDCDC;">
+                           <children>
+                              <Label text="Item">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextField fx:id="itemId" labelFloat="true" promptText="Item ID" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="itDesc" labelFloat="true" promptText="Description" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="itquan" labelFloat="true" promptText="Quantity" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="itUnit" labelFloat="true" promptText="Unit Price" unFocusColor="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" right="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <HBox prefHeight="50.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <JFXButton onAction="#addItem" prefHeight="43.0" prefWidth="70.0" text="Add">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </JFXButton>
+                                    <JFXButton onAction="#updateItem" prefHeight="43.0" prefWidth="70.0" text="Edit" />
+                                    <JFXButton onAction="#deleteItem" prefHeight="43.0" prefWidth="70.0" text="Remove" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" top="20.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
