@@ -92,8 +92,8 @@ public class MailController implements Initializable {
             props.put("mail.smtp.host","smtp.1and1.com" );
             props.put("mail.smtp.port", "587" );
                 
-        final String username = "bevan@advantedgenow.com";
-        final String password = "Bevan96076";
+        final String username = "";
+        final String password = "";
 
         Session session = Session.getDefaultInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
