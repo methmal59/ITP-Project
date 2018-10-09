@@ -1,0 +1,4 @@
+  private void Messgae(){
+        SMS sms= new SMS();
+        sms.SendSMS("usename","password",messgae,phonenumber ,"https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
+}
